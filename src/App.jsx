@@ -13,6 +13,18 @@ function App() {
     });
     setSat(displaySats);
   };
+  const handleAllOrbits = () => setSat(satData);
+
+  // const satMap = satData.map((data) => {
+  //   return (
+  //     <tbody>
+  //       <tr key={data.id}>{data.name}</tr>
+  //       <tr key={data.id}>{data.type}</tr>
+  //       <tr key={data.id}>{data.launchDate}</tr>
+  //       <tr key={data.id}>{data.operational}</tr>
+  //     </tbody>
+  //   );
+  // });
 
   return (
     <div>
@@ -21,8 +33,9 @@ function App() {
         filterByType={filterByType}
         setSat={setSat}
         displaySats={displaySats}
+        handleAllOrbits={handleAllOrbits}
       />
-      <Table />
+      <Table sat={sat} />
     </div>
   );
 }

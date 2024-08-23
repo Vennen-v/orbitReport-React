@@ -1,4 +1,6 @@
 const Table = ({ sat }) => {
+  console.log(sat);
+
   return (
     <table>
       <thead>
@@ -10,12 +12,22 @@ const Table = ({ sat }) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Row Data TBD</td>
-          <td>Row Data TBD</td>
-          <td>Row Data TBD</td>
-          <td>Row Data TBD</td>
-        </tr>
+        {/* <tr>
+          <td>{sat[0].name}</td>
+          <td>{sat[0].type}</td>
+          <td>{sat[0].launchDate}</td>
+          {sat[0].operational == true ? <td>Active</td> : <td>Inactive</td>}
+        </tr> */}
+        {sat.map((data) => {
+          return (
+            <tr key={data.id}>
+              <td>{data.name}</td>
+              <td>{data.type}</td>
+              <td>{data.launchDate}</td>
+              {sat.operational === true ? <td>Active</td> : <td>Inactive</td>}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
